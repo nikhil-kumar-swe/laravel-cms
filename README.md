@@ -57,7 +57,7 @@ Follow these steps to run the application locally:
 ### 1. Clone the Repository
 
 ```
-git clone https://github.com/your-username/laravel-cms.git
+git clone https://github.com/nikhil-kumar-swe/laravel-cms.git
 cd laravel-cms
 
 ```
