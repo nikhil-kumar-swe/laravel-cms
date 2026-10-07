@@ -1,9 +1,3 @@
-## 🌐 Acode Image Display Test
-
-If Acode allows internet image loading, you will see a sample Laravel logo below:
-
-![Test Live Web Image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Kj77fhuLL4hzygvmwCkOXRoeWRAnvp2arinnTC1gcg&s=10)
-
 # 🚀 Role-Based Laravel 11 CMS
 
 A lightweight Content Management System (CMS) built with **Laravel 11**, **Blade**, **Eloquent ORM**, and **Tailwind CSS**. Features role-based access control (RBAC), custom middleware, seeded database models, and dynamic management of categories and posts.
@@ -38,7 +32,7 @@ A lightweight Content Management System (CMS) built with **Laravel 11**, **Blade
 
 | Homepage | Admin Dashboard |
 | :---: | :---: |
-| ![Homepage](homepage.png) | ![Dashboard](./screenshots/dashboard.png) |
+| ![Homepage](screenshots/homepage.png) | ![Dashboard](screenshots/dashboard.png) |
 
 | Posts Management | Edit Post Form |
 | :---: | :---: |
@@ -159,4 +153,4 @@ When running `php artisan db:seed`, default accounts are generated for testing:
 
   * **Email:** `user@example.com`
 
-  * **Password:** `password`# Project file Push Test
+  * **Password:** `password`
