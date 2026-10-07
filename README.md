@@ -1,58 +1,162 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## 🌐 Acode Image Display Test
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+If Acode allows internet image loading, you will see a sample Laravel logo below:
 
-## About Laravel
+![Test Live Web Image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Kj77fhuLL4hzygvmwCkOXRoeWRAnvp2arinnTC1gcg&s=10)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# 🚀 Role-Based Laravel 11 CMS
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+A lightweight Content Management System (CMS) built with **Laravel 11**, **Blade**, **Eloquent ORM**, and **Tailwind CSS**. Features role-based access control (RBAC), custom middleware, seeded database models, and dynamic management of categories and posts.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ✨ Features
 
-## Learning Laravel
+* **Role-Based Access Control (RBAC):** Admin-only CRUD operations enforced via custom `IsAdminMiddleware`.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* **Authentication:** Built-in authentication powered by Laravel Breeze.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+* **Content Management:** Create, read, update, and delete categories and posts with database relationships.
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+* **Database Architecture:** Seeders configured with `firstOrCreate` to maintain predictable seed data without duplication across migration refreshes.
 
-## Agentic Development
+* **Modern UI:** Styled using Tailwind CSS compiled via Vite.
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## 🛠️ Tech Stack
 
-```bash
-composer require laravel/boost --dev
+* **Framework:** Laravel 11
 
-php artisan boost:install
+* **Templating:** Blade
+
+* **Database:** PostgreSQL
+
+* **Authentication & Security:** Laravel Breeze & Custom Middleware
+
+* **Frontend Styling:** Tailwind CSS & Vite
+
+* **Development Tools:** Artisan Tinker, Model Factories & Seeders
+
+## 📸 Screenshots
+
+| Homepage | Admin Dashboard |
+| :---: | :---: |
+| ![Homepage](homepage.png) | ![Dashboard](./screenshots/dashboard.png) |
+
+| Posts Management | Edit Post Form |
+| :---: | :---: |
+| ![Posts Index](screenshots/posts-index.png) | ![Edit Post](screenshots/post-edit.png) |
+
+## 📋 Prerequisites
+
+Ensure your development environment meets the following requirements before setting up the application:
+
+* **PHP:** `^8.2`
+
+* **Composer:** `^2.0`
+
+* **Node.js & npm:** Node `18+` / npm `9+`
+
+* **PostgreSQL:** `14+`
+
+## ⚙️ Installation & Local Setup
+
+Follow these steps to run the application locally:
+
+### 1. Clone the Repository
+
+```
+git clone https://github.com/your-username/laravel-cms.git
+cd laravel-cms
+
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Install Dependencies
 
-## Contributing
+```
+composer install
+npm install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```
 
-## Code of Conduct
+### 3. Environment Configuration
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Copy the environment template and generate an application key:
 
-## Security Vulnerabilities
+```
+cp .env.example .env
+php artisan key:generate
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```
 
-## License
+### 4. Database Setup (PostgreSQL)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Ensure your PostgreSQL server is running, then create a new database before running migrations:
+
+* **Using `psql` CLI:**
+
+  ```
+  CREATE DATABASE laravel_cms;
+  
+  ```
+
+* **Or via pgAdmin / GUI client:** Create a database named `laravel_cms`.
+
+Update your `.env` file with your local PostgreSQL credentials:
+
+```
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=laravel_cms
+DB_USERNAME=your_postgres_username
+DB_PASSWORD=your_postgres_password
+
+```
+
+### 5. Run Migrations & Database Seeders
+
+Once the database is created and `.env` credentials are set, execute:
+
+```
+php artisan migrate --seed
+
+```
+
+### 6. Frontend Assets & Server Setup
+
+Depending on whether you are actively developing or previewing production assets, run one of the following options:
+
+* **Option A: For Active Local Development (Live Hot-Reloading for Tailwind/JS changes)**
+
+  ```
+  # Terminal 1: Run Vite dev server for live styling changes
+  npm run dev
+  
+  # Terminal 2: Run Laravel backend server
+  php artisan serve
+  
+  ```
+
+* **Option B: For Production Asset Compilation**
+
+  ```
+  npm run build
+  php artisan serve
+  
+  ```
+
+Access the application at `http://127.0.0.1:8000`.
+
+## 🔑 Default Credentials
+
+When running `php artisan db:seed`, default accounts are generated for testing:
+
+* **Admin User (Full Access):**
+
+  * **Email:** `admin@example.com`
+
+  * **Password:** `password`
+
+* **Standard User (Restricted Access):**
+
+  * **Email:** `user@example.com`
+
+  * **Password:** `password`# Project file Push Test
